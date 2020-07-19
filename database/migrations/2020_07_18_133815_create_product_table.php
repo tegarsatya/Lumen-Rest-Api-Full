@@ -15,6 +15,11 @@ class CreateProductTable extends Migration
     {
         Schema::create('product', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->integer('harga');
+            $table->string('warna');
+            $table->enum('kondisi', ['baru', 'lama']);
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }
